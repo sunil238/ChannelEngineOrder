@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Order Details";
+}
+<h1>@ViewData["Title"]</h1>
+<p>@ViewData["StockUpdate"]</p>
+<table class="table table-bordered table-responsive table-hover">
+    <tr>
+        <th>Gtin </th>
+        <th>Description </th>
+        <th>Quantity </th>
+    </tr>
+    @foreach (var item in (List<OrderLines>)ViewData["Orders"])
+    {
+        <tr>
+            <td>@item.Gtin</td>
+            <td>@item.Description</td>
+            <td>@item.Quantity</td>
+        </tr>
+    }
+</table>
+
